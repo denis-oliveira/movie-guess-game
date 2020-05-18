@@ -32,6 +32,7 @@ public class MovieGuessGame {
         this.createsMovieList();
         this.selectsMovieToGuess();
         this.fillStringToShow();
+        this.showSpaces();
     }
 
     // Creates the list with the movie titles and count the number of movie titles
@@ -55,12 +56,21 @@ public class MovieGuessGame {
         }
     }
 
+    // Replace "_"'s with spaces
+    private void showSpaces() {
+        if(movieToGuess.indexOf(' ') != -1) {
+            this.replaceLetterInString(' ');
+        }
+    }
+
     // Play the game trying to guess one letter of the movie
     public void guessLetter(String letter) {
 
-        if(movieToGuess.contains(letter)) {
+        char firstLetter = letter.toLowerCase().charAt(0);
+
+        if(movieToGuess.indexOf(firstLetter) != -1) {
             // Movie to guess contains the letter input by the user
-            this.replaceLetterInString(letter);
+            this.replaceLetterInString(firstLetter);
         } else {
             // Movie to guess does not contains the letter input by the user
             this.wrongGuesses++;
@@ -72,7 +82,7 @@ public class MovieGuessGame {
     }
 
     // Replaces the "_"'s in the string with the letter guessed
-    public void replaceLetterInString(String letter) {
+    public void replaceLetterInString(char letter) {
         int index = 0;
         int indexOfLetterOccurrence = 0;
         // Replaces the occurrences of the input letter in the string shown to the user
@@ -81,7 +91,7 @@ public class MovieGuessGame {
             indexOfLetterOccurrence = this.movieToGuess.indexOf(letter, index);
             if (indexOfLetterOccurrence != -1) {
                 // Replaces the "_" with the letter chosen by the user
-                this.stringToShow.setCharAt(indexOfLetterOccurrence, letter.charAt(0));
+                this.stringToShow.setCharAt(indexOfLetterOccurrence, letter);
                 index = indexOfLetterOccurrence + 1;
             }
         }
