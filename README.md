@@ -1,2 +1,7 @@
 # movie-guess-game
-Game code written in Java as part of Java OOP Udacity training.
+Game code written in Java as part of Java OOP Udacity free training.
+
+Thank you, Udacity!
+
+Course link:
+https://www.udacity.com/course/object-oriented-programming-in-java--ud283
