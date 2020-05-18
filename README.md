@@ -1,5 +1,5 @@
 # movie-guess-game
-Game code written in Java as part of Java OOP Udacity free training.
+Game code written in Java as part of Java OOP Udacity free training. It is an IntelliJ IDEA project.
 
 Thank you, Udacity!
 
